@@ -22,18 +22,17 @@ job "node-exporter" {
     }
 
     service {
-      name = "node-exporter-prod"
+      name = "node-exporter-prod" # TODO : update thie to an env var
       port = "exporter"
     }
 
     task "node-exporter" {
-      # TODO : interpolate driver
       driver = "docker"
       user = "1000"
       config {
         image = "${artifact.image}:${artifact.tag}"
         auth {
-          username = "${docker_username}"
+          username = "${docker_username}" # TODO : change to use VAULT creds
           password = "${docker_password}"
         }
         ports = [
