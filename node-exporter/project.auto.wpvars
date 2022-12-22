@@ -1,6 +1,6 @@
 build_image_tag="latest"
 nomad_region=""
-:TODO move this to vault
-docker_name=""  the name of you docker hub
+#:TODO move this to vault
 docker_user=""
 docker_password=""
+

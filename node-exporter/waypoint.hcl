@@ -9,7 +9,7 @@ app "node-exporter" {
     }
     registry {
       use "docker" {
-        image        = "${docker_name}/${app.name}"
+        image        = "nomadops/${app.name}"  #update your docker hub name
         tag          = var.build_image_tag
         auth {
           username = var.docker_user

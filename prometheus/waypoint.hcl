@@ -9,7 +9,7 @@ app "prometheus" {
     }
     registry {
       use "docker" {
-        image        = "${docker_name}/${app.name}"
+        image        = "nomadops/${app.name}" #change this to your Docker repo name
         tag          = var.build_image_tag
         auth {
           username = var.docker_user
@@ -33,11 +33,6 @@ app "prometheus" {
 }
 
 variable "build_image_tag" {
-  type    = string
-  default = ""
-}
-
-variable "docker_name" {
   type    = string
   default = ""
 }
