@@ -1,6 +1,6 @@
-project = "node-exporter"
+project = "prometheus"
 
-app "node-exporter" {
+app "prometheus" {
   build {
     use "docker" {
       dockerfile = templatefile("${path.app}/Dockerfile", {
@@ -26,6 +26,7 @@ app "node-exporter" {
         docker_username = var.docker_user
         docker_password = var.docker_password
         nomad_region    = var.nomad_region
+        traefik_url     = var.traefik_url
       })
     }
   }
@@ -52,6 +53,11 @@ variable "docker_password" {
 }
 
 variable "nomad_region" {
+  type    = string
+  default = ""
+}
+
+variable "traefik_url" {
   type    = string
   default = ""
 }
