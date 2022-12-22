@@ -22,7 +22,7 @@ job "node-exporter" {
     }
 
     service {
-      name = "node-exporter-prod" # TODO : update thie to an env var
+      name = "node-exporter" # TODO : update this to an env var if you need to monitor prod and Dev with diffrent rules
       port = "exporter"
     }
 

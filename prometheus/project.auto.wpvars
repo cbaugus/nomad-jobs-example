@@ -1,6 +1,7 @@
-build_image_tag="latest"
+build_image_tag="v2.33.1"
 nomad_region=""
 :TODO move this to vault
 docker_name=""  the name of you docker hub
 docker_user=""
 docker_password=""
+traefik_url="prometheus.dc1.domain.com"
